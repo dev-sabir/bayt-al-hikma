@@ -1,0 +1,21 @@
+/* @settings
+
+name: 📐 Editor Width
+id: wide-editor
+settings:
+    -
+        id: file-line-width
+        title: Readable line width
+        description: Width of the text column. For full edge-to-edge width, turn OFF "Readable line length" in Settings → Editor.
+        type: variable-number-slider
+        default: 1100
+        min: 700
+        max: 1600
+        step: 20
+        format: px
+
+*/
+
+body {
+  --file-line-width: 1100px;
+}

@@ -1,0 +1,113 @@
+/* @settings
+
+name: 🌙 Dark Polish
+id: dark-polish
+settings:
+    -
+        id: bg-base
+        title: Background base color
+        description: The main editor background. Sidebars are derived darker, cards lighter.
+        type: variable-color
+        format: hex
+        opacity: false
+        default: '#181a1f'
+    -
+        id: dp-text-normal
+        title: Body text color
+        description: Lower = softer/dimmer, brighter = higher contrast.
+        type: variable-color
+        format: hex
+        opacity: false
+        default: '#dfe3ea'
+    -
+        id: dp-heading-accent
+        title: Tint H3 headings with accent
+        type: class-toggle
+        default: true
+
+*/
+
+/* ============================================================
+   Dark Polish — refined dark-mode surfaces, text, nav & graph.
+   Backgrounds derive from --bg-base via color-mix, so one
+   Style Settings picker shifts the whole theme. Tints use the
+   vault accent (--accent-h/s/l from vault-identity.css).
+   ============================================================ */
+
+.theme-dark {
+  /* --bg-base is supplied by Style Settings; fallback keeps it working without the plugin */
+  --bg:  var(--bg-base, #181a1f);
+
+  /* Layered backgrounds derived from the base */
+  --background-primary:        var(--bg);
+  --background-primary-alt:    color-mix(in srgb, var(--bg) 92%, white);
+  --background-secondary:      color-mix(in srgb, var(--bg) 80%, black);
+  --background-secondary-alt:  color-mix(in srgb, var(--bg) 62%, black);
+
+  /* Softer dividers & borders */
+  --background-modifier-border:        rgba(255, 255, 255, 0.06);
+  --background-modifier-border-hover:  rgba(255, 255, 255, 0.12);
+  --background-modifier-border-focus:  hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.45);
+  --divider-color:                     rgba(255, 255, 255, 0.06);
+
+  /* Easier-on-the-eyes text (--dp-text-normal supplied by Style Settings) */
+  --text-normal:    var(--dp-text-normal, #dfe3ea);
+  --text-muted:     #9499a4;
+  --text-faint:     #61656e;
+  --text-selection: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.20);
+
+  /* Title & tab bar match the deep sidebar */
+  --titlebar-background:          color-mix(in srgb, var(--bg) 80%, black);
+  --titlebar-background-focused:  color-mix(in srgb, var(--bg) 80%, black);
+  --tab-background-active:        var(--bg);
+
+  /* Rounded, accent-tinted nav items */
+  --nav-item-background-hover:   hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.10);
+  --nav-item-background-active:  hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.16);
+  --nav-item-color-active:       var(--text-normal);
+  --interactive-hover:           rgba(255, 255, 255, 0.05);
+
+  /* Graph view */
+  --graph-line:             rgba(255, 255, 255, 0.09);
+  --graph-node:             #9499a4;
+  --graph-node-focused:     hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  --graph-node-unresolved:  #5a5e68;
+}
+
+/* Round the active/hover nav rows a touch */
+.theme-dark .nav-file-title,
+.theme-dark .nav-folder-title {
+  border-radius: 7px;
+}
+
+/* Gentle accent bar on the active file */
+.theme-dark .nav-file-title.is-active {
+  box-shadow: inset 2px 0 0 hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+}
+
+/* Slimmer, subtler scrollbars */
+.theme-dark ::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+.theme-dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+.theme-dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.16);
+  background-clip: padding-box;
+}
+
+/* Crisper headings; H3 accent tint toggleable via Style Settings */
+.theme-dark .markdown-preview-view,
+.theme-dark .markdown-source-view {
+  --h1-color: var(--text-normal);
+  --h2-color: var(--text-normal);
+}
+.theme-dark.dp-heading-accent .markdown-preview-view,
+.theme-dark.dp-heading-accent .markdown-source-view {
+  --h3-color: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 12%));
+}

@@ -1,0 +1,25 @@
+# === Obsidian: machine-specific cache & UI layout (noisy churn) ===
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache/
+.obsidian/cache
+
+# Everything else in .obsidian IS tracked (snippets, appearance,
+# hotkeys, plugin list) so your setup restores anywhere.
+
+# === Trash ===
+.trash/
+
+# === macOS ===
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# === Secrets (safety net — keep tokens out of history) ===
+Credentials/
+*.cred
+
+# Local REST API plugin stores its API key + TLS private key here — NEVER commit
+.obsidian/plugins/obsidian-local-rest-api/data.json

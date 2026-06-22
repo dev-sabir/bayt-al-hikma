@@ -1,0 +1,36 @@
+filters:
+  and:
+    - 'type == "project"'
+properties:
+  note.status:
+    displayName: Status
+  note.priority:
+    displayName: Priority
+  note.deadline:
+    displayName: Deadline
+  file.mtime:
+    displayName: Last edited
+views:
+  - type: table
+    name: 🔥 Active
+    filters:
+      and:
+        - 'status == "active"'
+    order:
+      - file.name
+      - note.priority
+      - note.deadline
+      - file.mtime
+  - type: table
+    name: 📋 All projects
+    order:
+      - file.name
+      - note.status
+      - note.deadline
+      - note.created
+  - type: cards
+    name: 🗂️ Board
+    order:
+      - file.name
+      - note.status
+      - note.priority

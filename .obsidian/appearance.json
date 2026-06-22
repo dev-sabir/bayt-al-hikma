@@ -1,0 +1,8 @@
+{
+  "enabledCssSnippets": [
+    "vault-identity",
+    "dark-polish",
+    "wide-editor"
+  ],
+  "theme": "obsidian"
+}
