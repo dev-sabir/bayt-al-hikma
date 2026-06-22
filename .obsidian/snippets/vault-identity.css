@@ -53,7 +53,7 @@ body::after {
 
 /* Refined badge, centered at the top */
 body.vault-badge-toggle::before {
-  content: "بيت الحكمة · Bayt al-Hikma";
+  content: "Bayt al-Hikma · بيت الحكمة";
   position: fixed;
   top: 0;
   left: 50%;

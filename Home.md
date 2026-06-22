@@ -1,4 +1,4 @@
-# 🕌 بيت الحكمة · Bayt al-Hikma
+# 🕌 Bayt al-Hikma · بيت الحكمة
 
 > *House of Wisdom* — my personal second brain. (Work lives in the **DigitalCortex** vault.)
 
