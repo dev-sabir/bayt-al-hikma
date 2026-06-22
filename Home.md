@@ -1,6 +1,6 @@
-# 👋 Sabir's Vault
+# 🕌 بيت الحكمة · Bayt al-Hikma
 
-> Personal OS — capture, learn, build a habit. (Work lives in the **DigitalCortex** vault.)
+> *House of Wisdom* — my personal second brain. (Work lives in the **DigitalCortex** vault.)
 
 ---
 
